@@ -1,0 +1,7 @@
+{
+	"@metadata": {
+		"authors": [ "..." ]
+	},
+	"fluent": "{{optional}}",
+	"fluent-desc": "{{desc|what=skin|name=Fluent|url=https://www.mediawiki.org/wiki/Skin:Fluent}}"
+}

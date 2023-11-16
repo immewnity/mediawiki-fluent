@@ -1,0 +1,9 @@
+/* Styles for print view and printing */
+
+/* Hide some extra stuff from print view (some of the navigation is already hidden automatically, but not all) */
+.mw-indicators,
+#catlinks,
+#footer-places,
+#mw-navigation {
+	display: none;
+}

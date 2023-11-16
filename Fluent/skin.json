@@ -1,0 +1,66 @@
+{
+	"name": "Fluent",
+	"version": "0.50",
+	"author": "immewnity",
+	"url": "https://www.mediawiki.org/wiki/Skin:Fluent",
+	"descriptionmsg": "fluent-desc",
+	"namemsg": "fluent",
+	"license-name": "CC0-1.0",
+	"type": "skin",
+	"requires": {
+		"MediaWiki": ">= 1.35.0"
+	},
+	"ValidSkinNames": {
+		"fluent": "Fluent"
+	},
+	"MessagesDirs": {
+		"Fluent": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.fluent": {
+			"class": "ResourceLoaderSkinModule",
+			"features": [
+				"normalize",
+				"elements",
+				"content",
+				"interface",
+				"logo"
+			],
+			"styles": {
+				"resources/screen-common.less": {
+					"media": "screen"
+				},
+				"resources/screen-desktop.less": {
+					"media": "screen and (min-width: 751px)"
+				},
+				"resources/screen-mobile.less": {
+					"media": "screen and (max-width: 750px)"
+				},
+				"resources/print.css": {
+					"media": "print"
+				}
+			}
+		},
+		"skins.fluent.js": {
+			"scripts": [
+				"resources/main.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Fluent"
+	},
+	"ResourceModuleSkinStyles": {
+		"example": {
+			"+ext.echo.styles.badge": "resources/extensions/echo.styles.badge.less"
+		}
+	},
+	"AutoloadClasses": {
+		"SkinFluent": "includes/SkinFluent.php",
+		"FluentTemplate": "includes/FluentTemplate.php"
+	},
+	"manifest_version": 1
+}

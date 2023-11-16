@@ -1,0 +1,300 @@
+/* Styles appear on displays 750 pixels wide and below */
+
+@import "variables.less";
+
+#fabric-heading {
+	#user-tools {
+		width: calc( @icon-width * 2);
+		#search-icon {
+			display: block;
+			width: @icon-width;
+			height: @header-height;
+			background: transparent;
+			position: relative;
+			transition: background 0.16s;
+			&:hover {
+				cursor: pointer;
+				background: var(--user-tools-hover-background-color);
+			}
+			&::after {
+				display: block;
+				font-size: 16px;
+				font-family: FabricIcons;
+				content: "\E721";
+				position: absolute;
+				left: 16px;
+				top: 16px;
+				font-weight: normal;
+				color: var(--mobile-search-icon-color);
+			}
+		}
+	}
+	#search-box {
+		width: 100vw;
+		height: @header-height;
+		z-index: 9999;
+		background: var(--accent-color);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		padding: 0px 12px;
+		box-sizing: border-box;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0.16s, opacity 0.16s;
+		&.fade-search {
+			visibility: visible;
+			opacity: 1;
+		}
+		form#p-search {
+			margin: 0 auto;
+		}
+	}
+}
+
+.suggestions {
+	max-width: 468px;
+}
+
+@media (max-width: 480px) {
+	.suggestions {
+		max-width: calc( 100vw ~"-" 24px );
+	}
+}
+
+nav#mw-navigation {
+	min-width: 48px;
+	max-width: 48px;
+	overflow: hidden;
+	h3 {
+		display: none;
+	}
+	#site-navigation {
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding-right: 18px;
+		width: 100%;
+		height: ~"calc(100% - 36px)";
+		ul li {
+			transition: display 0.5s;
+		}
+		ul li span {
+			display: none;
+		}
+	}
+	#expand-collapse {
+		z-index: 33;
+		position:absolute;
+		left:0;
+		bottom:0;
+		width: 100%;
+		max-width: 48px;
+		height: 36px;
+		background: var(--nav-background-color);
+		transition: background 0.16s;
+		cursor: pointer;
+		span {
+			display: none;
+		}
+		&:hover {
+			background: var(--nav-background-hover-color);
+		}
+		&::after {
+			display: block;
+			font-size: 16px;
+			font-family: FabricIcons;
+			content: "\E761";
+			color: var(--nav-text-color);
+			position: absolute;
+			left: 16px;
+			top: 10px;
+			font-weight: normal;
+			transition: opacity 0.5s ease;
+		}
+	}
+}
+
+.expanded-sidebar {
+	#content.mw-body {
+		padding-left: 48px;
+		pointer-events: none;
+	}
+	nav#mw-navigation {
+		z-index: 200;
+		position: absolute;
+		top: 0;
+		left: 0;
+		min-width: 50%;
+		max-width: 100%;
+		overflow: auto;
+		box-shadow: 0px 0px 12px var(--mobile-expanded-sidebar-shadow-color);
+		#site-navigation {
+			overflow: auto;
+			padding-right: 0;
+			ul li span {
+				display: initial;
+			}
+		}
+		#expand-collapse {
+			width: 100%;
+			max-width: 100%;
+			&::after {
+				content: "\E760";
+			}
+		}
+	}
+}
+
+#p-banner {
+	display: none;
+}
+
+// Full-width thumbnails (to avoid having really squished text around them)
+div.thumb {
+	float: none;
+}
+
+.thumb {
+	width: 100%;
+	margin: 1em auto;
+}
+
+.thumbinner {
+	width: 100% !important; // stylelint-disable-line declaration-no-important
+}
+
+div.tright {
+	margin-left: 0;
+
+	.thumbinner {
+		padding-left: 0;
+	}
+}
+
+div.tleft {
+	margin-right: 0;
+
+	.thumbinner {
+		padding-right: 0;
+	}
+}
+
+.thumbimage {
+	display: block;
+	margin: 0 auto 0.5em;
+}
+
+.nomobile {
+	display: none;
+}
+
+@media (max-width: 540px) {
+	#page-tools {
+		h3 {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+			position: relative;
+			top: 0;
+			display: inline-flex;
+			align-items: center;
+			padding-left: 32px;
+			padding-right: 8px;
+			height: 44px;
+			color: var(--page-tools-text-color);
+			cursor: pointer;
+			transition: 0.16s;
+			&::after {
+				display: block;
+				font-size: 16px;
+				font-family: FabricIcons;
+				position: absolute;
+				left: 8px;
+				top: 14px;
+				font-weight: normal;
+				color: var(--page-tools-icon-color);
+			}
+			&:hover {
+				text-decoration: none;
+				background: var(--page-tools-hover-background-color);
+			}
+
+		}
+		h3#p-namespaces-label {
+			&::after {
+				content: "\EF76";
+			}
+		}
+		h3#p-views-label {
+			&::after {
+				content: "\E7B4";
+			}
+		}
+		h3#p-actions-label {
+			&::after {
+				content: "\E310";
+			}
+		}
+		.mw-portlet {
+			position: relative;
+			display: inline-block;
+			height: 44px;
+			#menu-namespaces, #menu-views, #menu-actions {
+				visibility: hidden;
+				opacity: 0;
+				transition: visibility 0.16s, opacity 0.16s;
+				&.fade-menu {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+			.mw-portlet-body {
+				position: absolute;
+				top: 44px;
+				z-index: 99;
+				background: var(--user-links-background-color);
+				box-shadow: 0px 8px 24px var(--user-links-shadow-color);
+				ul {
+					width: min-content;
+					li {
+						width: 100%;
+						a {
+							width: 100%;
+							box-sizing: border-box;
+							span {
+								display: inline;
+								white-space: nowrap;
+								text-indent: 4px;
+							}
+						}
+					}
+				}
+			}
+		}
+		#topNav-left .mw-portlet .mw-portlet-body {
+			left: 0px;
+		}
+		#topNav-right .mw-portlet .mw-portlet-body {
+			right: 0px;
+		}
+	}
+}
+
+@media (max-width:400px) {
+	#page-tools h3 {
+		text-indent: -9999px;
+		&::after {
+			left: 12px;
+			text-indent: 0px;
+		}
+	}
+}
+
+@media (max-width:350px) {
+	#fabric-heading #p-logo a.mw-wiki-logo {
+		width: 180px;
+	}
+}
