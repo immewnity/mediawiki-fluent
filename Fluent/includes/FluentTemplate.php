@@ -264,6 +264,7 @@ class FluentTemplate extends BaseTemplate {
 	 */
 	protected function getPageLinks() {
 		$leftNav = "";
+		$rightNav = "";
 		// Namespaces: links for 'content' and 'talk' for namespaces with talkpages. Otherwise is just the content.
 		// Usually rendered as tabs on the top of the page.
 		if (count($this->data['content_navigation']['namespaces']) > 0) {
