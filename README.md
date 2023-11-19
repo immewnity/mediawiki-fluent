@@ -1,4 +1,12 @@
-[日本語のREADMEはこちら](https://github.com/immewnity/mediawiki-fluent/blob/main/README-ja.md)
+## <div align="center"><b><a href="README.md">English</a> | <a href="README-ja.md">日本語</a></b></div>
+
+<div align="center">
+
+[![download](https://img.shields.io/github/downloads/immewnity/mediawiki-fluent/total.svg?color=green)](https://github.com/immewnity/mediawiki-fluent/releases)
+[![Open issue](https://img.shields.io/github/issues/immewnity/mediawiki-fluent?color=red)](https://github.com/immewnity/mediawiki-fluent/issues)
+[![Closed issue](https://img.shields.io/github/issues-closed/immewnity/mediawiki-fluent?color=blue)](https://github.com/immewnity/mediawiki-fluent/issues)
+
+</div>
 
 # Fluent skin for MediaWiki
 
