@@ -306,11 +306,12 @@ class FluentTemplate extends BaseTemplate {
 	 * Generates URL for the user's Gravatar, or defaults to a generic face if no Gravatar
 	 * @return string html
 	 */
-	protected function getGravatarUrl() {
-		$genericFace = $this->config->get( 'CanonicalServer' ) . $this->getSkin()->getSkinStylePath('resources/default-user.png');
-		$gravatarUrl = 'https://www.gravatar.com/avatar/' . md5( strtolower( trim( $this->getSkin()->getUser()->getEmail() ) ) ) . '?d=' . urlencode ( $genericFace ) . '&s=' . 100;
-		return $gravatarUrl;
-	}
+    protected function getGravatarUrl() {
+        $skin = $this->getSkin();
+        $genericFace = $this->config->get('CanonicalServer') . $skin->getConfig()->get('StylePath') . 'resources/default-user.png';
+        $gravatarUrl = 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->getSkin()->getUser()->getEmail()))) . '?d=' . urlencode($genericFace) . '&s=' . 100;
+        return $gravatarUrl;
+    }
 
 	/**
 	 * Generates user tools menu
