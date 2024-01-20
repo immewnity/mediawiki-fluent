@@ -127,9 +127,10 @@ class FluentTemplate extends BaseTemplate {
 			] + Linker::tooltipAndAccesskeyAttribs( 'p-logo' )
 		);
 		if ( !$imageOnly ) {
-			$language = $this->getSkin()->getLanguage();
-			$siteTitle = $language->convert( $this->getMsg( 'sitetitle' )->escaped() );
-
+			$siteTitle = MediaWikiServices::getInstance()->
+				getLanguageConverterFactory()->
+				getLanguageConverter()->convert( $this->getMsg( 'sitetitle' )->escaped() );
+			
 			$html .= Html::rawElement(
 				'a',
 				[
