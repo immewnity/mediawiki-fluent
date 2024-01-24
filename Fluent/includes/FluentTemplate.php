@@ -308,13 +308,13 @@ class FluentTemplate extends BaseTemplate {
 
 	/**
 	 * Generates URL for the user's Gravatar, or defaults to a generic face if no Gravatar
-	 * @param bool $gravatar Whether or not to use Gravatar
+	 * @param bool $disableGravatar Whether or not to use Gravatar
 	 * @return string html
 	 */
-    protected function getGravatarUrl(bool $gravatar = true) {
+    protected function getGravatarUrl(bool $disableGravatar = true) {
         $skin = $this->getSkin();
 	$genericFace = $this->config->get('CanonicalServer') . $skin->getConfig()->get('StylePath') . '/Fluent/resources/default-user.png';
-	if (!$gravatar) {
+	if ($disableGravatar) {
 		return $genericFace;
 	}
         $gravatarUrl = 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->getSkin()->getUser()->getEmail()))) . '?d=' . urlencode($genericFace) . '&s=' . 100;
