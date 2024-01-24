@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * BaseTemplate class for the Fluent skin
  *
@@ -9,6 +12,7 @@ class FluentTemplate extends BaseTemplate {
 	 * Outputs the entire contents of the page
 	 */
 	public function execute() {
+		$skinConfig = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig('Fluent');
 		$html = '';
 		$html .= $this->get( 'headelement' );
 		$html .= Html::rawElement( 'header', [ 'id' => 'fabric-heading' ],
@@ -31,7 +35,7 @@ class FluentTemplate extends BaseTemplate {
 						[ 'id' => 'user-icon', 'title' => 'User icon' ],
 						Html::rawElement(
 							'div',
-							[ 'id' => 'user-icon-img', 'style' => 'background-image: url("' . $this->getGravatarUrl() . '");' ]
+							[ 'id' => 'user-icon-img', 'style' => 'background-image: url("' . $this->getGravatarUrl($skinConfig->get('FluentDisableGravatar')) . '");' ]
 						)
 					) .
 					$this->getUserLinks()
@@ -304,11 +308,15 @@ class FluentTemplate extends BaseTemplate {
 
 	/**
 	 * Generates URL for the user's Gravatar, or defaults to a generic face if no Gravatar
+	 * @param bool $disableGravatar Whether or not to use Gravatar
 	 * @return string html
 	 */
-    protected function getGravatarUrl() {
+    protected function getGravatarUrl(bool $disableGravatar = false) {
         $skin = $this->getSkin();
 	$genericFace = $this->config->get('CanonicalServer') . $skin->getConfig()->get('StylePath') . '/Fluent/resources/default-user.png';
+	if ($disableGravatar) {
+		return $genericFace;
+	}
         $gravatarUrl = 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->getSkin()->getUser()->getEmail()))) . '?d=' . urlencode($genericFace) . '&s=' . 100;
         return $gravatarUrl;
     }
