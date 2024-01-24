@@ -311,7 +311,7 @@ class FluentTemplate extends BaseTemplate {
 	 * @param bool $disableGravatar Whether or not to use Gravatar
 	 * @return string html
 	 */
-    protected function getGravatarUrl(bool $disableGravatar = true) {
+    protected function getGravatarUrl(bool $disableGravatar = false) {
         $skin = $this->getSkin();
 	$genericFace = $this->config->get('CanonicalServer') . $skin->getConfig()->get('StylePath') . '/Fluent/resources/default-user.png';
 	if ($disableGravatar) {
