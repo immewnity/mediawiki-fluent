@@ -25,7 +25,7 @@ class SkinFluent extends SkinTemplate {
 			'skins.fluent'
 		] );
 		$out->addStyle(
-			'https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css'
+			'https://res-1.cdn.office.net/files/fabric-cdn-prod_20221201.001/office-ui-fabric-core/11.0.0/css/fabric.min.css'
 		);
 		$out->addModules( [
 			'skins.fluent.js'
