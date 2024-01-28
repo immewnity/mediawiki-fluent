@@ -12,7 +12,7 @@
 
 This is a [MediaWiki skin](https://www.mediawiki.org/wiki/Manual:Skins) based on [Microsoft's Fluent design system](https://en.wikipedia.org/wiki/Fluent_Design_System).
 
-To install, place the Fluent folder in \skins and add `wfLoadSkin( 'Fluent' );` to LocalSettings.
+To install, place the skin in a "Fluent" folder in \skins and add `wfLoadSkin( 'Fluent' );` to LocalSettings.
 
 ## Known issues
 
