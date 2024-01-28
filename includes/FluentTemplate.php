@@ -12,7 +12,6 @@ class FluentTemplate extends BaseTemplate {
 	 * Outputs the entire contents of the page
 	 */
 	public function execute() {
-		$skinConfig = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig('Fluent');
 		$html = '';
 		$html .= $this->get( 'headelement' );
 		$html .= Html::rawElement( 'header', [ 'id' => 'fabric-heading' ],
@@ -35,7 +34,7 @@ class FluentTemplate extends BaseTemplate {
 						[ 'id' => 'user-icon', 'title' => 'User icon' ],
 						Html::rawElement(
 							'div',
-							[ 'id' => 'user-icon-img', 'style' => 'background-image: url("' . $this->getGravatarUrl($skinConfig->get('FluentDisableGravatar')) . '");' ]
+							[ 'id' => 'user-icon-img', 'style' => 'background-image: url("' . $this->getGravatarUrl() . '");' ]
 						)
 					) .
 					$this->getUserLinks()
@@ -311,15 +310,24 @@ class FluentTemplate extends BaseTemplate {
 	 * @param bool $disableGravatar Whether or not to use Gravatar
 	 * @return string html
 	 */
-    protected function getGravatarUrl(bool $disableGravatar = false) {
-        $skin = $this->getSkin();
-	$genericFace = $this->config->get('CanonicalServer') . $skin->getConfig()->get('StylePath') . '/Fluent/resources/default-user.png';
-	if ($disableGravatar) {
-		return $genericFace;
+    protected function getGravatarUrl() {
+		$skinConfig = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig('Fluent');
+		$isGravatarEnabled = $skinConfig->get('FluentDisableGravatar');
+		$skin = $this->getSkin();
+		$genericFace =
+			$this->config->get( 'CanonicalServer' ) . $skin->getConfig()->get( 'StylePath' ) .
+			'/Fluent/resources/default-user.png';
+		if ( !$isGravatarEnabled ) {
+			return $genericFace;
+		} else {
+			$gravatarUrl =
+				'https://www.gravatar.com/avatar/' .
+				md5( strtolower( trim( $this->getSkin()->getUser()->getEmail() ) ) ) . '?d=' .
+				urlencode( $genericFace ) . '&s=' . 100;
+
+			return $gravatarUrl;
+		}
 	}
-        $gravatarUrl = 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->getSkin()->getUser()->getEmail()))) . '?d=' . urlencode($genericFace) . '&s=' . 100;
-        return $gravatarUrl;
-    }
 
 	/**
 	 * Generates user tools menu
