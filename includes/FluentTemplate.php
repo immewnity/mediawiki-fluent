@@ -560,10 +560,10 @@ class FluentTemplate extends BaseTemplate {
 			}
 			$body = Html::rawElement( $options['body-wrapper'], $bodyDivOptions,
 				$contentText .
-				$this->getAfterPortlet( $name )
+				$this->getSkin()->getAfterPortlet( $name )
 			);
 		} else {
-			$body = $contentText . $this->getAfterPortlet( $name );
+			$body = $contentText . $this->getSkin()->getAfterPortlet( $name );
 		}
 
 		$html = Html::rawElement( 'div', $divOptions,
