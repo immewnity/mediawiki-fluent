@@ -13,6 +13,9 @@
 			"help": "Control whether or not we should use Gravatar. You should set this to true for wikis not available over the internet"
 		}
 	},
+	"ConfigRegistry": {
+		"Fluent": "GlobalVarConfig::newInstance"
+	},
 	"requires": {
 		"MediaWiki": ">= 1.35.0"
 	},
