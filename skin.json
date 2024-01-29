@@ -7,12 +7,6 @@
 	"namemsg": "fluent",
 	"license-name": "CC0-1.0",
 	"type": "skin",
-	"config": {
-		"FluentDisableGravatar": {
-			"value": false,
-			"help": "Control whether or not we should use Gravatar. You should set this to true for wikis not available over the internet"
-		}
-	},
 	"ConfigRegistry": {
 		"Fluent": "GlobalVarConfig::newInstance"
 	},
@@ -70,6 +64,15 @@
 	"AutoloadClasses": {
 		"SkinFluent": "includes/SkinFluent.php",
 		"FluentTemplate": "includes/FluentTemplate.php"
+	},
+	"ConfigRegistry":{
+		"Fluent":"GlobalVarConfig::newInstance"
+	},
+	"config": {
+		"FluentDisableGravatar": {
+			"value": false,
+			"help": "Control whether or not we should use Gravatar. You should set this to true for wikis not available over the internet"
+		}
 	},
 	"manifest_version": 1
 }
