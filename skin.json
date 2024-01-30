@@ -35,6 +35,9 @@
 				"logo"
 			],
 			"styles": {
+				"resources/fabric.min.css": {
+					"media": "screen"
+				},
 				"resources/screen-common.less": {
 					"media": "screen"
 				},
