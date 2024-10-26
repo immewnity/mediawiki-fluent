@@ -4,12 +4,26 @@
 @icon-width: 48px;
 
 :root {
-  --desktop-search-icon-color: #A87045;
-  --desktop-search-clear-icon-color: #A87045;
   --accent-color: #CF8B54;
-  --search-background-color: #E1DFDD;
   --page-tools-icon-color: #BA7C4B;
   --footer-border: #CCC;
+  --logo-hover-background-color: rgba(0,0,0,0.2);
+  --user-tools-hover-background-color: rgba(0,0,0,0.2);
+  --postedit-shadow-color: rgba(0,0,0,0.2);
+  --user-links-shadow-color: rgba(0,0,0,0.2);
+  --mobile-expanded-sidebar-shadow-color: rgba(0,0,0,0.25);
+  --body-shadow-color: rgba(0,0,0,0.1);
+  --search-suggestions-shadow-color-1: rgba(0,0,0,0.13);
+  --search-suggestions-shadow-color-2: rgba(0,0,0,0.11);
+  --cookie-warning-shadow-color-1: rgba(0,0,0,0.13);
+  --cookie-warning-shadow-color-2: rgba(0,0,0,0.11);
+  --mobile-search-icon-color: white;
+}
+
+[data-theme="light"] {
+  --desktop-search-icon-color: #A87045;
+  --desktop-search-clear-icon-color: #A87045;
+  --search-background-color: #E1DFDD;
   --nav-background-color: #F1F2F3;
   --site-notice-background-color: #F1F2F3;
   --nav-text-color: #323130;
@@ -25,16 +39,6 @@
   --fieldset-border-color: #A3A2A1;
   --gallerybox-hover-border-color: #C1C5CA;
   --nav-background-hover-color: rgba(70,30,0,0.09);
-  --logo-hover-background-color: rgba(0,0,0,0.2);
-  --user-tools-hover-background-color: rgba(0,0,0,0.2);
-  --postedit-shadow-color: rgba(0,0,0,0.2);
-  --user-links-shadow-color: rgba(0,0,0,0.2);
-  --mobile-expanded-sidebar-shadow-color: rgba(0,0,0,0.25);
-  --body-shadow-color: rgba(0,0,0,0.1);
-  --search-suggestions-shadow-color-1: rgba(0,0,0,0.13);
-  --search-suggestions-shadow-color-2: rgba(0,0,0,0.11);
-  --cookie-warning-shadow-color-1: rgba(0,0,0,0.13);
-  --cookie-warning-shadow-color-2: rgba(0,0,0,0.11);
   --user-links-background-color: white;
   --wikitable-background-color: white;
   --wikitable-th-background-color: white;
@@ -42,129 +46,127 @@
   --file-img-background-color: white;
   --cookie-warning-background-color: white;
   --cookie-warning-button-text-color: white;
-  --mobile-search-icon-color: white;
   --cookie-warning-text-color: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --desktop-search-icon-color: white;
-    --desktop-search-clear-icon-color: white;
-    --search-background-color: #513D2E;
-    --nav-background-color: #323130;
-    --site-notice-background-color: #323130;
-    --nav-text-color: #F1F2F3;
-    --user-links-text-color: #F1F2F3;
-    --page-tools-text-color: #F1F2F3;
-    --search-suggestions-text-color: #DDD;
-    --search-suggestions-background-color: #212121;
-    --user-links-hover-background-color: #323130;
-    --page-tools-hover-background-color: #323130;
-    --gallerybox-hover-background-color: rgba(0,0,0,0.1);
-    --file-img-hover-background-color: #333;
-    --wikitable-td-border-color: #555;
-    --fieldset-border-color: #999;
-    --gallerybox-hover-border-color: #777;
-    --nav-background-hover-color: rgba(255,255,255,0.09);
-    --user-links-background-color: black;
-    --wikitable-background-color: #222;
-    --wikitable-th-background-color: #414141;
-    --search-hover-color: #6D4E36;
-    --file-img-background-color: #202020;
-    --cookie-warning-background-color: black;
-    --cookie-warning-button-text-color: white;
-    --cookie-warning-text-color: white;
-  }
 
-.mw-portlet h3 {
-  color: white;
-}
+[data-theme="dark"] {
+	--desktop-search-icon-color: white;
+	--desktop-search-clear-icon-color: white;
+	--search-background-color: #513D2E;
+	--nav-background-color: #323130;
+	--site-notice-background-color: #323130;
+	--nav-text-color: #F1F2F3;
+	--user-links-text-color: #F1F2F3;
+	--page-tools-text-color: #F1F2F3;
+	--search-suggestions-text-color: #DDD;
+	--search-suggestions-background-color: #212121;
+	--user-links-hover-background-color: #323130;
+	--page-tools-hover-background-color: #323130;
+	--gallerybox-hover-background-color: rgba(0,0,0,0.1);
+	--file-img-hover-background-color: #333;
+	--wikitable-td-border-color: #555;
+	--fieldset-border-color: #999;
+	--gallerybox-hover-border-color: #777;
+	--nav-background-hover-color: rgba(255,255,255,0.09);
+	--user-links-background-color: black;
+	--wikitable-background-color: #222;
+	--wikitable-th-background-color: #414141;
+	--search-hover-color: #6D4E36;
+	--file-img-background-color: #202020;
+	--cookie-warning-background-color: black;
+	--cookie-warning-button-text-color: white;
+	--cookie-warning-text-color: white;
 
-#fabric-heading #search-box form#p-search input#searchInput {
-  color: white;
-  caret-color: white;
-}
+	.mw-portlet h3 {
+	  color: white;
+	}
 
-#fabric-heading #search-box form#p-search input#searchInput::placeholder {
-  color: rgba(255,255,255,0.5);
-}
+	#fabric-heading #search-box form#p-search input#searchInput {
+	  color: white;
+	  caret-color: white;
+	}
 
-/* Temporary copy from Metrolook */
+	#fabric-heading #search-box form#p-search input#searchInput::placeholder {
+	  color: rgba(255,255,255,0.5);
+	}
 
-body {background:#222; background-image:none;}
-div#content {background:#202020;color:#fff;}
-div#content a {color:#9bf;}
-div#content a:visited {color:#99f;}
-div#content a.new, #p-personal a.new {color:#e55;}
-div#content textarea {background:#292929;color:#fff;}
-div#content #siteNotice {background:#414141;color:#fff;}
-div#content .editOptions {background:#414141;color:#fff;border:1px solid #767676;border-top:0;}
-div#content h1, div#content h2, div#content h3, div#content h4, div#content h5, div#content h6 {color:#fff;}
-div#content .warningbox {background-color:#292929;color:#fff;border:0;border-left:3px #fc3 solid;}
-div#content div#mw-read-only-warning {background-color:#592929;color:#fff;border:0;border-left:3px #f33 solid;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin-bottom:16px;padding:12px 24px;overflow-wrap:break-word;overflow:hidden;}
-div#content .mw-warning-with-logexcerpt {border:0;border-left:3px solid #2a4b8d;background-color:#292929;}
-div#mw-panel {background:#292929;}
-div#mw-panel div.portal div.body ul li a {color:#9bf;}
-div#mw-panel div.portal div.body ul li a:visited {color:#99f;}
-div#mw-panel div.portal div.body ul li a.new {color:#e55;}
-div#content pre {background-color:#292929;color:#f5f5f5;}
-#mw-panel.collapsible-nav .portal h3 a, #mw-panel.collapsible-nav .portal h5 a {color:#dadada;}
-#mw-panel div#simpleSearch {background-color:#292929;}
-#mw-panel div#simpleSearch input#searchInput {color:#fff;}
-.suggestions-results, .suggestions-special {background-color:#414141 !important;}
-.suggestions-results .suggestions-result, .suggestions-special .special-query {color:#fff !important;}
-.suggestions-special .special-label {color:#bbb !important;}
-div.vectorMenu, #mw-page-base {background-color:#683C1B;}
-div.vectorMenu:hover, div.vectorTabs li a:hover, .onhoverbg:hover {background-color:#874C2F;}
-div.vectorMenu ul {background-color:#292929;border:solid 2px #683C1B;border-top:0;}
-div.vectorMenu li a, #p-personal a {color:white;}
-div.vectorMenu li a:hover {background-color:#414141;color:white;}
-.wikitable, .mw-datatable {background-color:#292929;color:#eee;border:1px solid #4e4e4e;}
-.wikitable > tr > th, .wikitable > tr > td, .wikitable > * > tr > th, .wikitable > * > tr > td, .mw-datatable th, .mw-datatable td {border:1px solid #606060;}
-.wikitable > tr > th, .wikitable > * > tr > th, .mw-datatable th {background-color:#414141;}
-.mw-datatable tr td {background-color:#222;}
-.mw-datatable tr:hover td {background-color:#313131;}
-code {color:#fff;background-color:#000;border-color:#777;}
-.oo-ui-textInputWidget .oo-ui-inputWidget-input {background-color:#292929 !important;color:#fff !important;}
-.oo-ui-checkboxInputWidget [type='checkbox'] + span {background-color:#292929 !important;}
-.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {background-color:#292929 !important;border-color:#292929 !important;color:#fff !important;}
-.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {background-color:#4e4e4e !important;border-color:#4e4e4e !important;color:#fff !important;}
-.oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button:hover {background-color:#4e4e4e !important;}
-.wikiEditor-ui-toolbar {background-color:#414141;background-image:linear-gradient(to bottom,#4e4e4e 0,#292929 32px);}
-.oo-ui-buttonElement.oo-ui-iconElement .oo-ui-iconElement-icon, .oo-ui-buttonElement.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator {filter:invert(1) !important;}
-.wikiEditor-ui .wikiEditor-ui-top {border-bottom:1px solid #767676 !important;}
-.wikiEditor-ui .wikiEditor-ui-view {border:1px solid #767676 !important;}
-.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement, .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {outline:0 !important;border:0 !important;border-radius:0.2em !important;}
-.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement:hover, .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {background-color:#202020 !important;}
-.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {top:2px;left:2px;}
-.mw-rcfilters-ui-cell, .mw-rcfilters-ui-itemMenuOptionWidget, .mw-rcfilters-ui-filterMenuSectionOptionWidget, .mw-rcfilters-ui-menuSelectWidget-footer, .mw-rcfilters-ui-menuSelectWidget-footer-feedback {background-color:#292929 !important;color:#fff !important;}
-div#footer ul li {color:#aaa !important;}
-li.gallerybox div.thumb, #filetoc, .toc, #toc, .mw-warning, .catlinks {border:1px solid #606060; background-color:#292929;}
-.oo-ui-popupWidget-popup, .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {border:1px solid #606060 !important; background-color:#292929 !important;color:#fff;}
-#wpUploadFile {color:#fff !important;}
-.mw_metadata {background-color:#292929;color:#eee;border:1px solid #4e4e4e !important;}
-.mw_metadata > tr > th, .mw_metadata > tr > td, .mw_metadata > tr > td, .mw_metadata > * > tr > th, .mw_metadata > * > tr > td {border:1px solid #606060 !important;background-color:#292929 !important;color:#eee !important;}
-.mw_metadata > tr > th, .mw_metadata > * > tr > th {background-color:#414141 !important;}
-.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagMultiselectWidget-handle {background-color:#414141;border:1px solid #606060 !important;}
-.mw-rcfilters-ui-filterTagMultiselectWidget-wrapper-content-title {color:#eee !important;}
-.oo-ui-icon-menu, oo-ui-indicatorElement-indicator oo-ui-indicator-down, .oo-ui-icon-expand, .oo-ui-icon-collapse, .oo-ui-textInputWidget.oo-ui-widget-enabled.oo-ui-textInputWidget-type-search > .oo-ui-indicatorElement-indicator, .oo-ui-textInputWidget.oo-ui-widget-enabled > .oo-ui-iconElement-icon {filter:invert(1) !important;}
-#pagehistory li.selected {background-color:#292929 !important;outline:1px dashed #606060 !important;color:#eee !important;}
-.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {background-color:#292929 !important;color:#eee !important;border-color:#606060 !important;}
-.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover {background-color:#414141 !important;}
-div#content .oo-ui-widget-disabled a .oo-ui-labelElement-label {color:#000 !important;}
-#editbutton:hover {background-color:transparent;}
-.postedit {color: #eee !important; background-color: #202020 !important;border-top: 2px solid #eee !important;}
-.mw-notification {background-color:#000 !important;}
-.postedit-icon-checkmark {background-image: url(/wiki/skins/Metrolook/images/checkmark-w.png) !important; background-position: left !important;}
-div#mw-panel div.portal h5 {color:#c0c0c0;}
-.mw-search-profile-tabs {background: #333;}
-#mw-searchoptions {background: #222;}
-.results-info {color:#ccc;}
-.mw-charinsert-buttons, .mw-charinsert-buttons a {background-color: transparent !important;}
-.mw-charinsert-buttons a:hover, .mw-charinsert-buttons a:active {background-color: rgba(255,255,255,0.1) !important;}
-.oo-ui-tagItemWidget.oo-ui-widget-enabled .oo-ui-buttonElement-button .oo-ui-icon-close {filter: invert(0) !important;}
-.oo-ui-dropdownInputWidget.oo-ui-widget-enabled {background-color:transparent !important;}
-.smw-callout-warning {background: #48310f !important;}
-div.thumbinner { background-color:#292929; border: 1px solid #606060; }
-.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined, .mw-rcfilters-ui-cell, .mw-rcfilters-ui-itemMenuOptionWidget, .mw-rcfilters-ui-filterMenuSectionOptionWidget, .mw-rcfilters-ui-menuSelectWidget-footer, .mw-rcfilters-ui-menuSelectWidget-footer-feedback { background-color: transparent !important; }
+	/* Temporary copy from Metrolook */
+
+	body {background:#222; background-image:none;}
+	div#content {background:#202020;color:#fff;}
+	div#content a {color:#9bf;}
+	div#content a:visited {color:#99f;}
+	div#content a.new, #p-personal a.new {color:#e55;}
+	div#content textarea {background:#292929;color:#fff;}
+	div#content #siteNotice {background:#414141;color:#fff;}
+	div#content .editOptions {background:#414141;color:#fff;border:1px solid #767676;border-top:0;}
+	div#content h1, div#content h2, div#content h3, div#content h4, div#content h5, div#content h6 {color:#fff;}
+	div#content .warningbox {background-color:#292929;color:#fff;border:0;border-left:3px #fc3 solid;}
+	div#content div#mw-read-only-warning {background-color:#592929;color:#fff;border:0;border-left:3px #f33 solid;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin-bottom:16px;padding:12px 24px;overflow-wrap:break-word;overflow:hidden;}
+	div#content .mw-warning-with-logexcerpt {border:0;border-left:3px solid #2a4b8d;background-color:#292929;}
+	div#mw-panel {background:#292929;}
+	div#mw-panel div.portal div.body ul li a {color:#9bf;}
+	div#mw-panel div.portal div.body ul li a:visited {color:#99f;}
+	div#mw-panel div.portal div.body ul li a.new {color:#e55;}
+	div#content pre {background-color:#292929;color:#f5f5f5;}
+	#mw-panel.collapsible-nav .portal h3 a, #mw-panel.collapsible-nav .portal h5 a {color:#dadada;}
+	#mw-panel div#simpleSearch {background-color:#292929;}
+	#mw-panel div#simpleSearch input#searchInput {color:#fff;}
+	.suggestions-results, .suggestions-special {background-color:#414141 !important;}
+	.suggestions-results .suggestions-result, .suggestions-special .special-query {color:#fff !important;}
+	.suggestions-special .special-label {color:#bbb !important;}
+	div.vectorMenu, #mw-page-base {background-color:#683C1B;}
+	div.vectorMenu:hover, div.vectorTabs li a:hover, .onhoverbg:hover {background-color:#874C2F;}
+	div.vectorMenu ul {background-color:#292929;border:solid 2px #683C1B;border-top:0;}
+	div.vectorMenu li a, #p-personal a {color:white;}
+	div.vectorMenu li a:hover {background-color:#414141;color:white;}
+	.wikitable, .mw-datatable {background-color:#292929;color:#eee;border:1px solid #4e4e4e;}
+	.wikitable > tr > th, .wikitable > tr > td, .wikitable > * > tr > th, .wikitable > * > tr > td, .mw-datatable th, .mw-datatable td {border:1px solid #606060;}
+	.wikitable > tr > th, .wikitable > * > tr > th, .mw-datatable th {background-color:#414141;}
+	.mw-datatable tr td {background-color:#222;}
+	.mw-datatable tr:hover td {background-color:#313131;}
+	code {color:#fff;background-color:#000;border-color:#777;}
+	.oo-ui-textInputWidget .oo-ui-inputWidget-input {background-color:#292929 !important;color:#fff !important;}
+	.oo-ui-checkboxInputWidget [type='checkbox'] + span {background-color:#292929 !important;}
+	.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {background-color:#292929 !important;border-color:#292929 !important;color:#fff !important;}
+	.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {background-color:#4e4e4e !important;border-color:#4e4e4e !important;color:#fff !important;}
+	.oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button:hover {background-color:#4e4e4e !important;}
+	.wikiEditor-ui-toolbar {background-color:#414141;background-image:linear-gradient(to bottom,#4e4e4e 0,#292929 32px);}
+	.oo-ui-buttonElement.oo-ui-iconElement .oo-ui-iconElement-icon, .oo-ui-buttonElement.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator {filter:invert(1) !important;}
+	.wikiEditor-ui .wikiEditor-ui-top {border-bottom:1px solid #767676 !important;}
+	.wikiEditor-ui .wikiEditor-ui-view {border:1px solid #767676 !important;}
+	.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement, .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {outline:0 !important;border:0 !important;border-radius:0.2em !important;}
+	.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement:hover, .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {background-color:#202020 !important;}
+	.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {top:2px;left:2px;}
+	.mw-rcfilters-ui-cell, .mw-rcfilters-ui-itemMenuOptionWidget, .mw-rcfilters-ui-filterMenuSectionOptionWidget, .mw-rcfilters-ui-menuSelectWidget-footer, .mw-rcfilters-ui-menuSelectWidget-footer-feedback {background-color:#292929 !important;color:#fff !important;}
+	div#footer ul li {color:#aaa !important;}
+	li.gallerybox div.thumb, #filetoc, .toc, #toc, .mw-warning, .catlinks {border:1px solid #606060; background-color:#292929;}
+	.oo-ui-popupWidget-popup, .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {border:1px solid #606060 !important; background-color:#292929 !important;color:#fff;}
+	#wpUploadFile {color:#fff !important;}
+	.mw_metadata {background-color:#292929;color:#eee;border:1px solid #4e4e4e !important;}
+	.mw_metadata > tr > th, .mw_metadata > tr > td, .mw_metadata > tr > td, .mw_metadata > * > tr > th, .mw_metadata > * > tr > td {border:1px solid #606060 !important;background-color:#292929 !important;color:#eee !important;}
+	.mw_metadata > tr > th, .mw_metadata > * > tr > th {background-color:#414141 !important;}
+	.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagMultiselectWidget-handle {background-color:#414141;border:1px solid #606060 !important;}
+	.mw-rcfilters-ui-filterTagMultiselectWidget-wrapper-content-title {color:#eee !important;}
+	.oo-ui-icon-menu, oo-ui-indicatorElement-indicator oo-ui-indicator-down, .oo-ui-icon-expand, .oo-ui-icon-collapse, .oo-ui-textInputWidget.oo-ui-widget-enabled.oo-ui-textInputWidget-type-search > .oo-ui-indicatorElement-indicator, .oo-ui-textInputWidget.oo-ui-widget-enabled > .oo-ui-iconElement-icon {filter:invert(1) !important;}
+	#pagehistory li.selected {background-color:#292929 !important;outline:1px dashed #606060 !important;color:#eee !important;}
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {background-color:#292929 !important;color:#eee !important;border-color:#606060 !important;}
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover {background-color:#414141 !important;}
+	div#content .oo-ui-widget-disabled a .oo-ui-labelElement-label {color:#000 !important;}
+	#editbutton:hover {background-color:transparent;}
+	.postedit {color: #eee !important; background-color: #202020 !important;border-top: 2px solid #eee !important;}
+	.mw-notification {background-color:#000 !important;}
+	.postedit-icon-checkmark {background-image: url(/wiki/skins/Metrolook/images/checkmark-w.png) !important; background-position: left !important;}
+	div#mw-panel div.portal h5 {color:#c0c0c0;}
+	.mw-search-profile-tabs {background: #333;}
+	#mw-searchoptions {background: #222;}
+	.results-info {color:#ccc;}
+	.mw-charinsert-buttons, .mw-charinsert-buttons a {background-color: transparent !important;}
+	.mw-charinsert-buttons a:hover, .mw-charinsert-buttons a:active {background-color: rgba(255,255,255,0.1) !important;}
+	.oo-ui-tagItemWidget.oo-ui-widget-enabled .oo-ui-buttonElement-button .oo-ui-icon-close {filter: invert(0) !important;}
+	.oo-ui-dropdownInputWidget.oo-ui-widget-enabled {background-color:transparent !important;}
+	.smw-callout-warning {background: #48310f !important;}
+	div.thumbinner { background-color:#292929; border: 1px solid #606060; }
+	.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined, .mw-rcfilters-ui-cell, .mw-rcfilters-ui-itemMenuOptionWidget, .mw-rcfilters-ui-filterMenuSectionOptionWidget, .mw-rcfilters-ui-menuSelectWidget-footer, .mw-rcfilters-ui-menuSelectWidget-footer-feedback { background-color: transparent !important; }
 }
