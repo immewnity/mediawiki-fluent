@@ -89,3 +89,42 @@ if (expandCollapseButton) {
 		siteWrapper.classList.toggle("expanded-sidebar");
 	});
 };
+
+// Dark mode toggle
+var darkModeToggle = document.getElementById("a-dark-toggle");
+if (darkModeToggle) {
+	darkModeToggle.addEventListener("click", function() {
+		var currentTheme = localStorage.getItem('mode');
+		if (currentTheme == "dark") {
+			setTheme('light');
+			document.getElementById('a-dark-toggle').innerHTML = 'Turn dark mode on';
+			return;
+		}
+		setTheme('dark');
+		document.getElementById('a-dark-toggle').innerHTML = 'Turn dark mode off';
+	});
+};
+function setTheme(themeName) {
+  localStorage.setItem('mode', themeName);
+  document.documentElement.setAttribute('data-theme', themeName);
+};
+const theme = localStorage.getItem('mode');
+if (theme) {
+	setTheme(theme);
+	if (theme == 'light') {
+		document.getElementById('a-dark-toggle').innerHTML = 'Turn dark mode on';
+	} else if (theme == 'dark') {
+		document.getElementById('a-dark-toggle').innerHTML = 'Turn dark mode off';
+	}
+} else {
+	const prefersLightTheme = window.matchMedia('(prefers-color-scheme: light)');
+	if (window.matchMedia('(prefers-color-scheme: light)')) {
+		setTheme('light');
+		document.getElementById('a-dark-toggle').innerHTML = 'Turn dark mode on';
+	} else if (window.matchMedia('(prefers-color-scheme: dark)')) {
+		setTheme('dark');
+		document.getElementById('a-dark-toggle').innerHTML = 'Turn dark mode off';
+	} else {
+		document.getElementById('a-dark-toggle').style.display = 'none';
+	};
+};
