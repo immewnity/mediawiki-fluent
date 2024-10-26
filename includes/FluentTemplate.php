@@ -373,6 +373,37 @@ class FluentTemplate extends BaseTemplate {
 
 		$html .= $this->getPortlet( 'personal', $personalTools, 'personaltools' );
 
+
+
+
+
+
+		$html .= Html::rawElement(
+			'div',
+			[ 'id' => 'p-dark-toggle', 'class' => 'mw-portlet' ],
+			Html::rawElement(
+				'div',
+				[ 'id' => 'menu-dark-toggle', 'class' => 'mw-portlet-body' ],
+				Html::rawElement(
+					'ul',
+					[ 'id' => 'ul-dark-toggle' ],
+					Html::rawElement(
+						'li',
+						[ 'id' => 'li-dark-toggle' ],
+						Html::rawElement(
+							'a',
+							[ "id" => "a-dark-toggle", "title" => "Toggle dark mode" ],
+							"Toggle dark mode"
+						)
+					)
+				)
+			)
+		);
+
+
+
+
+
 		$html .= Html::closeElement( 'div' );
 
 		return $html;
